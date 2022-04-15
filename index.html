@@ -7,12 +7,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Application</title>
     <link rel="stylesheet" href="index.css">
+    <style>
+        h1 {
+            text-align: center;
+            font-style: oblique;
+            font-size: 55px;
+            color: white;
+            /* text-shadow: 3px 2px rgb(180, 171, 171); */
+        }
+
+        .animate-charcter {
+            margin: auto;
+            margin-left: 28%;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            background-image: linear-gradient(-225deg,
+                    black 0%,
+                    grey 29%,
+                    grey 67%,
+                    white 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 4s linear infinite;
+            display: inline-block;
+            font-size: 40px;
+        }
+
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <h1 class="animate-charcter">Weather Application By Prajwal</h1>
     <div id="container">
         <div>
-            <button onclick="getWeather()">Search By Location <span style="margin-left: 35px;"><i class="fa-solid fa-magnifying-glass"></i></span></button>
+            <button onclick="getWeather()">Search By Location <span style="margin-left: 35px;"><i
+                        class="fa-solid fa-magnifying-glass"></i></span></button>
         </div>
         <div id="manual" style="margin-top: 10px; margin-bottom: 10px;">
             <input type="text" id="city" placeholder="Enter City Name" />
@@ -29,7 +69,8 @@
         </div>
 
         <div class="mapouter">
-            <div class="gmap_canvas"><iframe style="width: 100%; height: 300px; border-radius: 10px; margin-top: 10px;" id="gmap_canvas" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <div class="gmap_canvas"><iframe style="width: 100%; height: 300px; border-radius: 10px; margin-top: 10px;"
+                    id="gmap_canvas" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
         </div>
     </div>
